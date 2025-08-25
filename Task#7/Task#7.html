@@ -1,0 +1,48 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Task #7</title>
+  
+  <!--NOTE: Design is from a free website~-->
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #0f3854;
+      background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
+      background-size: 100%;
+      font-family: 'Share Tech Mono', monospace;
+      color: #daf6ff;
+      text-align: center;
+    }
+    #clock {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 80px;
+      text-shadow: 0 0 20px rgba(10, 175, 230, 1),
+                   0 0 20px rgba(10, 175, 230, 0);
+    }
+  </style>
+</head>
+<body>
+<div id="clock"></div>
+<script>
+function clock() {
+let n=new Date();
+//.toString().padStart(2, "0") is for 05 instead of 5 for example
+let h= n.getHours().toString().padStart(2, "0"); //hours
+let m= n.getMinutes().toString().padStart(2, "0");//minutes
+let s= n.getSeconds().toString().padStart(2, "0");//seconds
+let t=`${h}:${m}:${s}`;//hh:mm:ss
+
+document.getElementById("clock").textContent=t;}
+setInterval(clock, 1000);//keeps calling the funtion "clock" every 1000ms=1s
+clock();//for the first second cuz setInterval will day the first second"wait 100ms the first time"
+</script>
+</body>
+</html>
