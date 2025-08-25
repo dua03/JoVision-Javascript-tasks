@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Task#5</title>
+</head>
+<body>
+<button id="b1">Click 1</button> 
+<button id="b2">Click 2</button> 
+<button id="b3">Click 3</button> 
+<button id="b4">Click 4</button> 
+<button id="b5">Click 5</button> 
+
+
+<p id="output"></p>
+<script>
+function make_array(){
+let a=[];
+for(let i=0;i<=100;i++){a.push(i);}
+return a;}
+
+document.getElementById("b1").addEventListener("click", function(){
+let a=make_array();
+a=a.filter(i=>i%3!==0); // here we filter, we keep things that r not divisible by 3
+console.log("Click 1: ",a);});
+
+document.getElementById("b2").addEventListener("click", function(){
+let a=make_array();
+let x=[];
+for(let i=100;i<150;i++){
+x.push(i)}
+a=a.concat(x);
+console.log("Click 2: ",a);});
+
+document.getElementById("b3").addEventListener("click", function(){
+let a=make_array();
+for(let i=0;i<100;i++){
+a[i]=a[i]+3;
+}
+console.log("Click 3: ",a);});
+
+document.getElementById("b4").addEventListener("click", function(){
+let a=make_array();
+let sub=[];
+for(let i=20;i<=40;i++){
+sub.push(a[i]);}
+console.log("Click 4: ",sub);});
+
+function shuffleArray(array) {
+for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+	  }
+	}
+	
+document.getElementById("b5").addEventListener("click", function(){
+let a=make_array();
+shuffleArray(a);
+console.log("Click 5 (shuffled): ",a);
+a.sort((a, b) => b - a);
+console.log("Click 5 (desc): ",a);});
+
+</script>
+</body>
+</html>
