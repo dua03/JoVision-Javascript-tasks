@@ -1,0 +1,25 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Task#5</title>
+</head>
+<body>
+<button id="T5_Button">Click me</button> <!-- we use id for referance in JS code~-->
+
+<p id="output"></p>
+<script>
+const b = document.getElementById("T5_Button");
+const out = document.getElementById("output");
+
+b.addEventListener("click", function(){
+let a=[];
+for(let i=0;i<=100;i++){
+a.push(i);}
+
+let sum=0;
+for (let i of a){
+if(i%2===0){sum+=i;}}
+out.textContent="sum of even numbers from 0 to 100 is: "+ sum;});
+</script>
+</body>
+</html>
